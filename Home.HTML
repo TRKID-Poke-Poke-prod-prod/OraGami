@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="Styles/general.css">
+    <link rel="stylesheet" href="Styles/Header.css">
+    <link rel="stylesheet" href="Styles/MainSection.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;700&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body style="height:10000px;">
+    <!-- Header -->
+    <div class="Header">
+      <img src="Images/header.png" class="HeaderImage">
+      <img src="Images/Logo.png" class="LogoImage">
+      <div class="Slogan"><div style="flex: 1;"> </div><p class="SloganText">A Better Path folded out in front</p><div style="flex: 1;"> </div></div>
+      <div style="flex: 1;"></div>
+      <div class="menu">
+        <ul>
+          <li>
+            <a href="#">Origamis</a>
+            <div class="submenu">
+              <ul>
+                <li><a href="#" class="fa-beat">Frog</a></li>
+                <li><a href="#" class="fa-beat">Air Ball</a></li>
+                <li><a href="#" class="fa-beat">Cool looking Plane</a></li>
+                <li><a href="#" class="fa-beat">Far Flying Plane</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="menu">
+        <ul>
+          <li>
+            <a href="#">Help</a>
+            <div class="submenu">
+              <ul>
+                <li><a href="#Hell">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">About Website</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="Shopping">
+        <button class="fa-sharp fa-solid fa-cart-shopping fa-bounce" style="padding:5px; flex: 1; background-color: rgba(0, 0, 0, 0); border: none; margin-right: 10px;"> Cart</button>
+      </div>
+    </div>
+    <!-- Buttons and middle section -->
+    <div class="MiddleSec" id="buttons">
+      <img src="Images/oragami.jpg">
+      <div class="buttonHolderTypeOne"><button class="buttonStyleOne">Far Flying Plane</button><button class="buttonStyleOne">Frog</button></div>
+      <p style="font-family: Roboto Slab;">Diffrent Oragamis</p>
+      <div class="buttonHolderTypeOne"><button onclick="window.location.href='#Hell'" class="buttonStyleOne">Air Ball</button><button class="buttonStyleOne">Cool looking Plane</button></div>
+    </div>
+    <!-- Info about origami -->
+    <div class="OrigamiInfo">
+      <p class="header-text">How OriGami was made</p>
+      <p class="Norm-Text">Blah Blah Blah</p>
+      <img src="Images/Spare.png">
+    </div>
+    <!-- Contact us -->
+    <div style="padding:1000px"></div>
+    <!-- Footer -->
+    <div id="Hell">Hello!<button onclick="window.location.href='#buttons'" class="buttonStyleOne">Air Ball</button></div>
+  </body>
+</html>
