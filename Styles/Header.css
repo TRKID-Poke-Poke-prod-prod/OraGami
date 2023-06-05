@@ -1,9 +1,10 @@
 .LogoImage {
-    width: 85px;
+
     display: inline;
     border: none;
     margin-left: 10px;
     border-radius: 50px;
+    width: 85px;
     background-color: rgb(1, 1, 124);
 }
 
@@ -158,4 +159,17 @@
     animation-iteration-count: infinite;
     animation-duration: 5s;
     animation-timing-function: ease-out;
+}
+
+.Logo-button {
+    position: fixed;
+    color: rgba(0, 0, 00, 0);
+    border-radius: 50px;
+    width: 85px;
+    height: 50;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.08);
+    z-index: 3;
+    padding: 30px;
+    margin-left: 10px;
 }
