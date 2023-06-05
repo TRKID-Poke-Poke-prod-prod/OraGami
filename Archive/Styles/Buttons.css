@@ -1,0 +1,77 @@
+.RedSub {
+  background-color: red;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.Join {
+  background-color: rgba(255, 0, 0, 0);
+  color: rgb(19, 108, 224);
+  border-color: rgb(19, 108, 224);
+  border-radius: 2px;
+  border-width: 1px;
+  cursor: pointer;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-right: 19px;
+  transition: color 0.15s;
+  transition: background-color 0.15s;
+}
+.Tweet {
+  background-color: rgb(69, 163, 218);
+  color: rgb(255, 255, 255);
+  border: none;
+  height: 30px;
+  width: 60px;
+  border-radius: 80px;
+  border-width: 1px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  
+}
+.Tweet:hover {
+  background-color: rgb(69, 163, 218);
+  color: rgb(255, 255, 255);
+  border: none;
+  height: 30px;
+  width: 60px;
+  border-radius: 80px;
+  border-width: 1px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: -1px 3px 5px rgba(0, 0, 0, 0.562);
+}
+  
+.Join:active {
+  opacity: 0.7;
+}
+   
+.RedSub:hover {
+  opacity: 0.7;
+}
+    
+.RedSub:active {
+  opacity: 0.5;
+}
+   
+.Join:hover {
+  background-color: rgb(19, 108, 224);
+  color: rgba(255, 255, 255);
+  border-color: rgba(255, 255, 255);
+  border-radius: 2px;
+  border-width: 1px;
+  cursor: pointer;
+  margin-right: 19px;
+}

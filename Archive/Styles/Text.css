@@ -1,0 +1,67 @@
+
+    .VidTitle {
+        font-family: Arial;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+
+
+
+	.a {
+		padding-top: 8px;
+		padding-bottom: 8px;
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-left: 100px;
+		border: none;
+		color:white;
+		background-color: rgb(153, 123, 42);
+		margin-top: 10px;
+		box-shadow: 5px 5px 2px #000000b7;
+        transition: all 0.15s;
+	}
+	.a:hover {
+		margin-left: 102.5;
+		margin-top: 12.5;
+        background-color: white;
+        color: rgb(153, 123, 42);
+		box-shadow: 2.5px 2.5px 5px #000000b7;
+	}
+	.a:active {
+		margin-left: 105;
+		margin-top: 15;
+        background-color: white;
+        color: rgb(153, 123, 42);
+		box-shadow: 0px 0px 5px #000000b7;
+	}
+
+    .as {
+		padding-top: 8px;
+		padding-bottom: 8px;
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-left: 100px;
+		border: none;
+		color:white;
+		background-color: rgb(72, 42, 153);
+		margin-top: 10px;
+		box-shadow: 5px 5px 2px #000000b7;
+        transition: all 0.15s;
+	}
+	.as:hover {
+		margin-left: 102.5;
+		margin-top: 12.5;
+        background-color: white;
+        color: rgb(72, 42, 153);
+		box-shadow: 2.5px 2.5px 5px #000000b7;
+	}
+	.as:active {
+		margin-left: 105;
+		margin-top: 15;
+        background-color: white;
+        color: rgb(72, 42, 153);
+		box-shadow: 0px 0px 5px #000000b7;
+	}
+

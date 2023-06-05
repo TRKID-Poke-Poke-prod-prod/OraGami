@@ -1,0 +1,161 @@
+.LogoImage {
+    width: 85px;
+    display: inline;
+    border: none;
+    margin-left: 10px;
+    border-radius: 50px;
+    background-color: rgb(1, 1, 124);
+}
+
+
+.Header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    background-color: rgb(43, 173, 167);
+    right: 0;
+    left: 0;
+    top: 0;
+    height: 100px;
+    border-bottom: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(9, 0, 51);
+    justify-content: left;
+}
+
+.Slogan {
+    display: inline-flex;
+    flex: 4;
+    font-size: x-large;
+    margin-left: 20px;
+    border-radius: 50px;
+    background-color: rgba(106, 106, 255, 0.5);
+    height: 70px;
+    max-width: 650px;
+    min-width: max-content;
+    align-items: center;
+}
+
+.SloganText {
+    margin-left: 20px;
+    flex: 3;
+}
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.menu {
+    background-color: rgb(45, 45, 255);
+    border-radius: 40px;
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+.menu:hover{
+    background-color: rgb(103, 161, 214);
+    border-radius: 40px;
+}
+
+.menu ul{
+    display: inline-flex;
+    list-style: none;
+    color: white;
+}
+
+.menu ul li{
+    width: 120px;
+    margin: 15px;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+
+.active, .menu ul li:Hover{
+    background-color: rgb(103, 161, 214);
+    border-radius: 40px;
+}
+
+.menu-bar .fa {
+    margin-right: 8px;
+
+}
+
+.submenu {
+    display: none;
+}
+
+.menu ul li:Hover .submenu{
+    display: block;
+    position: absolute;
+    background-color: rgb(103, 161, 214);
+    margin-top: 4px;
+    margin-left: -15px;
+    border-radius: 10px;
+    width: 150px;
+}
+
+.menu ul li:Hover .submenu ul{
+    display: block;
+    margin: 10px;
+}
+
+.menu ul li:Hover .submenu ul li{
+    width: 100px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+
+.menu ul li:Hover .submenu ul li:last-child{
+    border-bottom: none;
+}
+
+.menu ul li:Hover .submenu ul li a:hover{
+    color: rgb(100, 100, 100);
+}
+
+.Shopping button:hover{
+    color: rgb(137, 194, 111);
+}
+
+.Shopping button:active{
+    color: rgb(4, 28, 161);
+}
+
+.Shopping {
+    width: min-content;
+}
+
+.Shopping button{
+    color: bisque;
+}
+
+@keyframes bgImage
+{
+    0%{left: 0;}
+    50%{left: 850px;}
+    100%{left: 0;}
+}
+
+.HeaderImage {
+    position: fixed;
+    z-index: -1;
+    height: 100px;
+    width: 1110px;
+
+    animation-name: bgImage;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+}

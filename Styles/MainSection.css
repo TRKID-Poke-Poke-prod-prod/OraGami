@@ -1,0 +1,110 @@
+@keyframes Glitch {
+    0%{box-shadow: red -10px -0,cyan 10px 0}
+}
+
+@keyframes Glitchs {
+    0.1%{box-shadow: red -10px -0,cyan 10px 0}
+}
+
+
+.buttonStyleOne {
+    border-style:inset;
+    border-width: 5px;
+    padding: 10;
+    margin: 10px;
+    color:white;
+    background-color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.buttonStyleOne:hover {
+    border-style:inset;
+    border-width: 5px;
+    padding: 10;
+    margin: 10px;
+    color:white;
+    background-color: gray;
+    border-color: gray;
+
+    animation-name: Glitch;
+    animation-duration: 1.5s;
+}
+
+.buttonStyleOne:active {
+    border-style:inset;
+    border-width: 5px;
+    padding: 10;
+    margin-top: 15px;
+    color: black;
+    background-color: white;
+    border-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    animation-name: Glitchs;
+    animation-duration: 1000s;
+}
+
+.MiddleSec p {
+    display: inline;
+    flex: 2;
+    text-align: center;
+    margin-top: 200px;
+    font-size: 30px;
+}
+
+.MiddleSec img {
+    position: absolute;;
+    z-index: -3;
+    width: 2000px;
+    top: 0;
+}
+
+.MiddleSec{
+    display: flex;
+    margin-bottom: 0;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    height: 496px;
+    border-bottom-width: 5px;
+
+}
+
+.buttonHolderTypeOne {
+    display: inline-flex;
+    width: 200px;
+    margin-top: 150px;
+    flex-direction: column;
+}
+
+.header-text {
+    color: black;
+    flex: 3;
+    text-align: center;
+    position: absolute;
+    margin-top: -200px;
+    margin-left: -350px;
+    font-family: Roboto Slab;
+    font: 700;
+    font-size: 40px;
+    text-shadow: red -3px 0px, cyan 3px 0px;
+}
+
+.Norm-Text {
+    flex: 3;
+}
+
+.OrigamiInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+}
+
+.OrigamiInfo img{
+    flex: 1;
+    height: 300px;
+    border-style: groove;
+    border-width: 10px;
+    border-color: aquamarine;
+}

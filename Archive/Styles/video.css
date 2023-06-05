@@ -1,0 +1,37 @@
+.thumbnail {
+  width: 300px;
+  display: block;
+}
+
+
+.SearchBar {
+  font-size: 20px;
+  margin-left: 12px;
+  display: block;
+}
+
+.VidA,
+.VidStats {
+  display: block;
+}
+
+.VidPre {
+  width: 300px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 15px;
+}
+
+.cp,
+.ci {
+  display: inline-block;
+}
+
+.cpic {
+  border-radius: 360px;
+  width: 50px;
+}
+
+.ci {
+  width: 200px;
+}
