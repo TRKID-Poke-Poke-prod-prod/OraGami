@@ -49,7 +49,38 @@
       </div>
       <div class="Shopping">
         <button class="fa-sharp fa-solid fa-cart-shopping fa-bounce" style="padding:5px; flex: 1; background-color: rgba(0, 0, 0, 0); border: none; margin-right: 10px;"> Cart</button>
+        <button onclick="document.getElementById('id01').style.display='block'; document.getElementById('id02').style.zIndex=-1">Login</button>
       </div>
+      <!-- The Modal -->
+      <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'"
+        class="close" title="Close Modal">&times;</span>
+
+      <!-- Modal Content -->
+      <form class="modal-content animate" action="/action_page.php" method="post">
+        <div class="imgcontainer">
+          <img src="Images/img_avatar2.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+
+          <button type="submit" value="Login" name="">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+      </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'; document.getElementById('id02').style.zIndex=1" class="cancelbtn">Cancel</button>
+      <span class="psw"><a href="#">Forgot password?</a></span>
+    </div>
+    </form>
+    </div>
     </div>
     <!-- Buttons and middle section -->
     <div class="MiddleSec" id="buttons">
@@ -60,7 +91,7 @@
     </div>
     <!-- Info about origami -->
     <div class="OrigamiInfo">
-      <p class="header-text">How OriGami was made</p>
+      <p class="header-text" id="id02">How OriGami was made</p>
       <p class="Norm-Text">Origami is an ancient Japanese art form that involves folding paper into intricate shapes and designs. Believed to have originated in the 17th century, although the exact origins are unclear. Some historians believe that it may have been inspired by the Chinese art of paper folding. Though others suggest that it may have evolved from traditional Japanese paper-folding techniques. Regardless of its origins, origami has become a beloved art form around the world, with enthusiasts creating everything from simple animals to complex geometric shapes. Origami has been made by humans for centuries originating in Japan, where it was used for ceremonial uses and not for public satisfaction</p>
       <img src="Images/Spare.png">
     </div>
