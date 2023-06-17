@@ -80,32 +80,39 @@
 
 .header-text {
     color: black;
-    flex: 3;
+    display: block;
     text-align: center;
-    position: absolute;
-    margin-top: -480px;
-    margin-left: -10px;
     font-family: Roboto Slab;
     font: 700;
-    font-size: 80px;
+    top: 0;
+    font-size: 70px;
     z-index: 1;
     text-shadow: red -3px 0px, cyan 3px 0px;
 }
 
 .Norm-Text {
-    flex: 2;
     margin-top: 100px;
     padding-left: 30px;
     text-align: center;
     font-size: 25px;
     padding-right: 30px;
+    width: 60%;
 }
 
 .OrigamiInfo {
-    display: flex;
     justify-content: center;
     align-items: center;
     background-color: aquamarine;
+}
+
+.OrigamiInfo div p{
+    display: inline-block;
+}
+
+.OrigamiInfo div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .OrigamiInfo img{
@@ -114,4 +121,6 @@
     border-style: groove;
     border-width: 10px;
     border-color: aquamarine;
+    display: inline-block;
+    width: 35%;
 }
