@@ -4,6 +4,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .error-message {
@@ -43,5 +44,37 @@ html {
     opacity: 0.7;
     margin-bottom: -5px;
     margin-right: -20px;
+}
+
+.Error-101 {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    position: fixed;
+    z-index: 1;
+    font-size: 40px;
+    padding: 20px;
+}
+
+.Error-101 a {
+    padding-top: 10px;
+    display: block;
+    font-style: none;
+
+}
+
+.footer {
+    background-color: gray;
+    margin-top: -19px;
+    padding: 20px;
+    height: 300px;
+}
+
+.s1 {
+    width: 25%;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
 }
 

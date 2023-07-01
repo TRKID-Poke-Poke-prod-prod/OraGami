@@ -68,7 +68,6 @@
     border-bottom-color: black;
     height: 496px;
     border-bottom-width: 5px;
-
 }
 
 .buttonHolderTypeOne {
@@ -123,4 +122,25 @@
     border-color: aquamarine;
     display: inline-block;
     width: 35%;
+}
+
+.Section-contact-us div{
+    display: inline-block;
+    margin: 10px;
+    width: 40%;
+}
+
+.Input-Conserns{
+    display: inline-block;
+    width: 40%;
+}
+
+.Section-contact-us {
+    display: flex;
+    justify-content: space-around;
+    background-color:darkcyan;
+}
+
+.Section-contact-us div input{
+    border-radius: 5px;
 }
