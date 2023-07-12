@@ -142,23 +142,11 @@
     color: bisque;
 }
 
-@keyframes bgImage
-{
-    0%{left: 0;}
-    50%{left: 850px;}
-    100%{left: 0;}
-}
-
 .HeaderImage {
     position: fixed;
     z-index: -1;
     height: 100px;
     width: 1110px;
-
-    animation-name: bgImage;
-    animation-iteration-count: infinite;
-    animation-duration: 5s;
-    animation-timing-function: ease-out;
 }
 
 .Logo-button {

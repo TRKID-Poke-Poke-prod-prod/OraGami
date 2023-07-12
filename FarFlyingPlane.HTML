@@ -3,7 +3,7 @@
   <head>
     <title>Oragami</title>
     <link rel="stylesheet" href="Styles/general.css">
-    <link rel="stylesheet" media="(max-width: 1000px)"href="Styles/media.css">
+    <link rel="stylesheet" media="screen and(orientation: landscape)"href="Styles/media.css">
     <link rel="stylesheet" href="Styles/Header.css">
     <link rel="stylesheet" href="Styles/MainSection.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,7 @@
   </head>
   <body>
     <!-- Header -->
-    <div class="Header" style="z-index: 1;">
+    <div class="Header">
       <img src="Images/header.png" class="HeaderImage">
       <img src="Images/Logo.png" class="LogoImage">
       <a class="Logo-button" href='index.html' title="Home">A</a>
@@ -83,35 +83,33 @@
     </form>
     </div>
     </div>
-    <!-- Buttons and middle section -->
-    <div class="MiddleSec" id="buttons">
-      <img src="Images/oragami.jpg">
-      <div class="buttonHolderTypeOne"><button class="buttonStyleOne" onclick="window.location.href='FarFlyingPlane.HTML'">Far Flying Plane</button><button onclick="window.location.href='Frog.HTML'" class="buttonStyleOne">Frog</button></div>
-      <p style="font-family: Roboto Slab;">Diffrent Oragamis</p>
-      <div class="buttonHolderTypeOne" style="margin-right: 20px;"><button onclick="window.location.href='AirBall.HTML'" class="buttonStyleOne">Air Ball</button><button onclick="window.location.href='CoolLookingPlane.HTML'" class="buttonStyleOne">Cool looking Plane</button></div>
-    </div>
-    <!-- Info about origami -->
-    <div class="OrigamiInfo">
-      <p class="header-text" id="id02">How OriGami was made</p>
-      <div class="Holder-Type-One">
-        <p class="Norm-Text">Origami is an ancient Japanese art form that involves folding paper into intricate shapes and designs. Believed to have originated in the 17th century, although the exact origins are unclear. Some historians believe that it may have been inspired by the Chinese art of paper folding. Though others suggest that it may have evolved from traditional Japanese paper-folding techniques. Regardless of its origins, origami has become a beloved art form around the world, with enthusiasts creating everything from simple animals to complex geometric shapes. Origami has been made by humans for centuries originating in Japan, where it was used for ceremonial uses and not for public satisfaction</p>
-        <img src="Images/Spare.png">
-      </div>
-    </div>
-    <div class="error-size-msg">
-      <a class="text-type-1">Error: Expand the window to continue</p>
-    </div>
-    <!-- Contact us -->
-    <div class="Section-contact-us" id="contact" style="z-index: -1;">
-      <div>
-        <input class="Input-Name" type="text" placeholder="Name" name="Name" required>
-        <input class="Input-Email" type="text" placeholder="Email" name="Email">
-        <button class="Input-submit-button" onclick="document.getElementById('Error-101').style.display='block'">Submit</button>
-      </div>
-      <input class="Input-Conserns" type="text" placeholder="Conserns" name="Conserns" required>
+
+    <!--Rest of the code-->
+    <div class="main-airball">
+      <img style="object-fit: cover; position: absolute;" class="airball-main-image" src="Images\paperplane.jpg">
+
+      <div class="Funky-Text">Far Flying Plane</div>
     </div>
 
-    <div style="display: none;" class="Error-101" id="Error-101">This feature is currently unavaliable, Please try again another time! For now you can email: Life.pigsrule@gmail.com
+    <div class="info-section" id="id01">
+      <div class="Buttonsstuff">
+        <h1>Far Flying Planes and how to make them!</h1>
+        <div>Instructions: Watch <a href="#?video">video</a> for step by step Instructions (recommended) Otherwise <button class="click-here square-buttons" onclick="document.getElementById('id03').style.display='flex'">Click Here</button>to access PDF variation of a step by step Instructions or <a href="pdfs\FarFlyingPlane.pdf" download="FarFlyingPlane.pdf">click Here</a> to download the pdf</div>
+        <button class="square-buttons youtube-link" onclick="window.location.href='https://www.youtube.com/watch?v=i0r0srIV6Co'">Click to go to youtube</button>
+        <button class="square-buttons add-to-shop" onclick="document.getElementById('Error-101').style.display='block'">Look at OraGami products</button>
+      </div>
+      <div class="image"><img src="Images\paperplane-v.jpg"></div>
+    </div>
+
+    
+
+    <div class="video-imbed"><img id="?video" class="background-image" src="Images\brown.png"><div class="video-frame-holder"><video controls="true" autoplay muted src="Videos\farflyingplane.mp4"></div></div>
+    <div class="imbed-bed" id="id03">
+      <iframe class="imbed-pdf" src="https://schoolsnsw-my.sharepoint.com/personal/tilak_rao424_education_nsw_gov_au/_layouts/15/embed.aspx?UniqueId=bcc6c3d0-6000-4067-ad6c-86a774a8a860" frameborder="0" scrolling="yes" allowfullscreen title="FarFlyingPlane.pdf"></iframe>
+      <button class="coverbutton" onclick="document.getElementById('id03').style.display='none'"></button>
+      <p class="message-for-user">Press the outside area to go back</p>
+    </div>
+    <div style="display: none;" class="Error-101" id="Error-101">This feature is currently unavaliable, Please try again another time! For now email if you have any trouble: Life.pigsrule@gmail.com
       <a href="mailto:life.pigsule@gmail.com">Mail: Life.pigsrule@gmail.com</a><button class="Button-Cancel" onclick="document.getElementById('Error-101').style.display='none'">Cancel</button></div>
     <!-- Footer -->
     <div class="footer" id="about">
