@@ -42,7 +42,7 @@
               <ul>
                 <li><a href="Home.HTML#Buttons">About Us</a></li>
                 <li><a href="Home.HTML#contact">Contact Us</a></li>
-                <li><a href="aboutUS.HTML#about">About Website</a></li>
+                <li><a href="Home.HTML#about">About Website</a></li>
               </ul>
             </div>
           </li>
@@ -83,30 +83,35 @@
     </form>
     </div>
     </div>
-    <div class="error-size-msg">
-      <a class="text-type-1">Error: Expand the window to continue</p>
-    </div>
 
     <!--Rest of the code-->
     <div class="main-airball">
-      <img style="object-fit: cover; position: absolute;" class="airball-main-image" src="Images\airball.jpg">
+      <img style="object-fit: cover; position: absolute;" class="airball-main-image" src="Images\paperplane.jpg">
 
-      <div class="Funky-Text">AirBall</div>
+      <div class="Funky-Text">Cool Looking Plane</div>
     </div>
 
     <div class="info-section" id="id01">
       <div class="Buttonsstuff">
-        <h1>Airballs and how to make them!</h1>
-        <div>Instructions: Watch video for step by step Instructions (recommended) Otherwise <a href="action_page.html" >Click Here </a>to access PDF variation of a step by step Instructions</div>
-        <button class="square-buttons youtube-link">Click to go to youtube</button>
-        <button class="square-buttons add-to-shop" onclick="document.getElementById('Error-101').style.display='block'">Add to cart</button>
+        <h1>Cool Looking Planes and how to make them!</h1>
+        <div>Instructions: Watch <a href="#?video">video</a> for step by step Instructions (recommended) Otherwise <button class="click-here square-buttons" onclick="document.getElementById('id03').style.display='flex'">Click Here</button>to access PDF variation of a step by step Instructions or <a href="pdfs\CoolLookingPlane.pdf" download="CoolLookingPlane.pdf">click Here</a> to download the pdf</div>
+        <button class="square-buttons youtube-link" onclick="window.location.href='https://www.youtube.com/watch?v=i0r0srIV6Co'">Click to go to youtube</button>
+        <button class="square-buttons add-to-shop" onclick="document.getElementById('Error-101').style.display='block'">Look at OraGami products</button>
       </div>
-      <div class="image"><img src="Images\airball-v.jpg"></div>
+      <div class="image"><img src="Images\paperplane-v.jpg"></div>
     </div>
 
-    <div class="video-imbed"><img class="background-image" src="Images\brown.png"><div class="video-frame-holder"><video controls="true" autoplay muted src="Videos\airball.mp4"></div></div>
     
 
+    <div class="video-imbed"><img id="?video" class="background-image" src="Images\brown.png"><div class="video-frame-holder"><iframe width="1000px" height="500.5px" src="https://www.youtube.com/embed/EDSn-_mCZLg" title="Cool looking plane | Full TUTORIAL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+    <div class="imbed-bed" id="id03">
+      <iframe class="imbed-pdf" src="https://schoolsnsw-my.sharepoint.com/personal/tilak_rao424_education_nsw_gov_au/_layouts/15/embed.aspx?UniqueId=bcc6c3d0-6000-4067-ad6c-86a774a8a860" frameborder="0" scrolling="yes" allowfullscreen title="FarFlyingPlane.pdf"></iframe>
+      <button class="coverbutton" onclick="document.getElementById('id03').style.display='none'"></button>
+      <p class="message-for-user">Press the outside area to go back</p>
+    </div>
+    <div class="error-size-msg">
+      <a class="text-type-1">Error: Expand the window to continue</p>
+    </div>
     <div style="display: none;" class="Error-101" id="Error-101">This feature is currently unavaliable, Please try again another time! For now email if you have any trouble: Life.pigsrule@gmail.com
       <a href="mailto:life.pigsule@gmail.com">Mail: Life.pigsrule@gmail.com</a><button class="Button-Cancel" onclick="document.getElementById('Error-101').style.display='none'">Cancel</button></div>
     <!-- Footer -->
