@@ -312,3 +312,16 @@
     border-color: blueviolet;
     border-width: 20px;
 }
+
+@keyframes text {
+    0%{opacity: 0.2; margin-top: 20px;}
+    100%{opacity: 1; margin-top: 0;}
+}
+
+h2 {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    animation: text;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+}

@@ -1,0 +1,72 @@
+5/10/2023
+19:54:55
+Duration: 26.783333333333333333333333333 Minutes
+---------------------------LOG-----------------------------
+7:55:07 PM: Planning website
+7:55:25 PM: and doing a HTML + CSS course
+7:56:04 PM: my website idea is OriGami
+7:57:15 PM: I will sell orangami paper and have free tutorials and so forth
+7:58:40 PM: Currently Learning HTML and CSS through a super simple dev tutorial on youtube where he make a youtube clone,
+8:00:16 PM: Some difficulties I may encounter include, Aninmation and styling,
+8:01:46 PM: so far I have learned how to make buttons, what block and inline-block elements are and how to change them, I have also learned how to use <div></div> feature(HELPS A LOT!)
+8:02:44 PM: I plan not to have the website hosted but just submit a folder of all the .HTML files and all the .CSS files.
+8:21:48 PM: planned first page of website on: https://lucid.app/lucidspark/8a6fda71-546d-4e14-94e2-7bd448d4c992/edit?viewport_loc=-543%2C131%2C3454%2C1729%2C0_0&invitationId=inv_33410cf9-69eb-495a-9e60-07a6b4dbeee8
+-----------------------------------------------------------
+5/11/2023
+15:12:41
+Duration: 17.25 Minutes
+---------------------------LOG-----------------------------
+3:13:02 PM: designing website atributes
+3:30:04 PM: Landing page of website disigned on lucidspark
+-----------------------------------------------------------
+5/14/2023
+15:57:21
+Duration: 15.066666666666666666666666667 Minutes
+---------------------------LOG-----------------------------
+3:57:45 PM: planning another page, Already planned Landing page.
+4:11:57 PM: My HTML skills are comming along
+4:12:29 PM: my practice code is on: bit.ly/TilakDamm
+-----------------------------------------------------------
+29/05/2023
+9:29:50
+Duration: 67.266666666666666666666666667 Minutes
+---------------------------LOG-----------------------------
+9:30:08 AM: Working header of webpage
+-----------------------------------------------------------
+3/06/2023
+12:10:39
+Duration: 123.6 Minutes
+---------------------------LOG-----------------------------
+12:10:51 PM: finished headder
+12:11:07 PM: took forever 
+12:11:14 PM: Working on body 
+12:45:16 PM: Finished Main section
+12:45:28 PM: starting on origin of OriGami
+-----------------------------------------------------------
+5/06/2023
+6:28:37
+Duration: 59.75 Minutes
+---------------------------LOG-----------------------------
+6:28:48 AM: finshed buttons
+6:29:14 AM: working on Text section, webite is looking goos
+6:29:26 AM: good* sorry
+6:53:45 AM: Finished!
+6:54:00 AM: starting on CSS for test area
+7:22:18 AM: Finishing touches on CSS
+7:22:32 AM: Website looks really good
+-----------------------------------------------------------
+18/06/2023
+8:20:25
+Duration: 112.38333333333333333333333333 Minutes
+---------------------------LOG-----------------------------
+8:21:10 AM: Starting more planing and behind the scenes work in OraGami
+8:21:50 AM: I have figured out how to host the website but sadly I won't be paying for a custom domain name
+-----------------------------------------------------------
+18/06/2023
+13:55:45
+Duration: 231.08333333333333333333333333 Minutes
+---------------------------LOG-----------------------------
+1:55:53 PM: researching
+2:01:32 PM: Starting on other pages
+2:51:02 PM: FINISHED Website!
+-----------------------------------------------------------
