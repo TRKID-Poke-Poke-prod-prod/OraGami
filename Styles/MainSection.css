@@ -158,6 +158,10 @@
     z-index: -2;
 }
 
+.main-airball div {
+    z-index: -2;
+}
+
 @keyframes appear-from-left {
     0%{margin-left: -400px;opacity: 0;}
     100%{marign-left: 0;opacity: 1;}
