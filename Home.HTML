@@ -263,11 +263,15 @@
             transition: all 0.3s ease;
             cursor: pointer;
             text-align: center;
+            text-decoration: none;
+            color: inherit;
         }
 
         .origami-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            text-decoration: none;
+            color: inherit;
         }
 
         .origami-card i {
@@ -616,7 +620,7 @@
     <!-- Header -->
     <header class="header">
         <nav class="nav-container">
-            <a href="#" class="logo">
+            <a href="Home.html" class="logo">
                 <i class="fas fa-dove"></i>
                 Origami
             </a>
@@ -625,10 +629,10 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link">Origami Tutorials</a>
                     <div class="dropdown">
-                        <a href="#" class="dropdown-item"><i class="fas fa-frog"></i> Frog</a>
-                        <a href="#" class="dropdown-item"><i class="fas fa-circle"></i> Air Ball</a>
-                        <a href="#" class="dropdown-item"><i class="fas fa-paper-plane"></i> Cool Plane</a>
-                        <a href="#" class="dropdown-item"><i class="fas fa-plane"></i> Flying Plane</a>
+                        <a href="Frog.html" class="dropdown-item"><i class="fas fa-frog"></i> Frog</a>
+                        <a href="AirBall.html" class="dropdown-item"><i class="fas fa-circle"></i> Air Ball</a>
+                        <a href="CoolLookingPlane.html" class="dropdown-item"><i class="fas fa-paper-plane"></i> Cool Plane</a>
+                        <a href="FarFlyingPlane.html" class="dropdown-item"><i class="fas fa-plane"></i> Flying Plane</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -671,26 +675,26 @@
                 </div>
             </div>
             <div class="origami-showcase">
-                <div class="origami-card" onclick="window.location.href='#'">
+                <a href="Frog.html" class="origami-card">
                     <i class="fas fa-frog"></i>
                     <h3>Jumping Frog</h3>
                     <p>Classic and fun!</p>
-                </div>
-                <div class="origami-card" onclick="window.location.href='#'">
+                </a>
+                <a href="CoolLookingPlane.html" class="origami-card">
                     <i class="fas fa-paper-plane"></i>
-                    <h3>Paper Airplane</h3>
+                    <h3>Cool Looking Plane</h3>
+                    <p>Stylish design</p>
+                </a>
+                <a href="FarFlyingPlane.html" class="origami-card">
+                    <i class="fas fa-plane"></i>
+                    <h3>Far Flying Plane</h3>
                     <p>Soar through the sky</p>
-                </div>
-                <div class="origami-card" onclick="window.location.href='#'">
-                    <i class="fas fa-dove"></i>
-                    <h3>Peace Crane</h3>
-                    <p>Symbol of hope</p>
-                </div>
-                <div class="origami-card" onclick="window.location.href='#'">
-                    <i class="fas fa-star"></i>
-                    <h3>Lucky Star</h3>
-                    <p>Make a wish</p>
-                </div>
+                </a>
+                <a href="AirBall.html" class="origami-card">
+                    <i class="fas fa-circle"></i>
+                    <h3>Air Ball</h3>
+                    <p>Bounce and play</p>
+                </a>
             </div>
         </div>
     </section>
@@ -924,10 +928,4 @@
         });
 
         // Demo login info
-        console.log('Demo login credentials:');
-        console.log('Username: admin, Password: admin123');
-        console.log('Username: user, Password: user123');
-        console.log('Username: demo, Password: demo');
-    </script>
-</body>
-</html>
+        console.log('Demo login credentials:
