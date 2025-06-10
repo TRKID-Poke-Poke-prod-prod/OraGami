@@ -1,124 +1,933 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Oragami</title>
-    <link rel="stylesheet" href="Styles/general.css">
-    <link rel="stylesheet" media="(max-width: 1000px)"href="Styles/media.css">
-    <link rel="stylesheet" href="Styles/Header.css">
-    <link rel="stylesheet" href="Styles/MainSection.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origami - A Better Path Folded Out in Front</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;700&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  </head>
-  <body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #4a90c2;
+            --accent-color: #ff6b6b;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--bg-color);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            background: rgba(44, 90, 160, 0.1);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            min-width: 200px;
+            z-index: 1001;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            padding: 0.75rem 1.5rem;
+            color: var(--text-color);
+            text-decoration: none;
+            display: block;
+            border-radius: 10px;
+            margin: 0.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background: var(--gradient);
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--white);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50,10 90,90 10,90" fill="%23667eea" opacity="0.1"/></svg>') repeat;
+            background-size: 100px 100px;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            z-index: 1;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .origami-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            padding: 2rem;
+        }
+
+        .origami-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .origami-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .origami-card i {
+            font-size: 3rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .origami-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Info Section */
+        .info-section {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .info-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .info-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .info-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-image {
+            text-align: center;
+        }
+
+        .info-image i {
+            font-size: 15rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 5rem 2rem;
+            background: var(--bg-color);
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 1rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 15px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 10% auto;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideIn 0.3s ease;
+            overflow: hidden;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .close {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--white);
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close:hover {
+            transform: translateY(-50%) rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .login-form input {
+            padding: 1rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .login-form input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .login-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .forgot-password {
+            text-align: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            z-index: 3000;
+            animation: slideInRight 0.3s ease;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-color);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .info-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .origami-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                margin: 20% auto;
+                width: 95%;
+            }
+        }
+
+        /* User Profile Dropdown */
+        .user-profile {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .user-profile:hover {
+            background: rgba(44, 90, 160, 0.1);
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .logout-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
     <!-- Header -->
-    <div class="Header" style="z-index: 1;">
-      <img src="Images/header.png" class="HeaderImage">
-      <img src="Images/Logo.png" class="LogoImage">
-      <a class="Logo-button" href='index.html' title="Home">A</a>
-      <div class="Slogan"><div style="flex: 1;"> </div><p class="SloganText">A Better Path folded out in front</p><div style="flex: 1;"> </div></div>
-      <div style="flex: 1;"></div>
-      <div class="menu">
-        <ul>
-          <li>
-            <a href="#">Origamis</a>
-            <div class="submenu">
-              <ul>
-                <li><a href="Frog.HTML" class="fa-beat">Frog</a></li>
-                <li><a href="AirBall.HTML" class="fa-beat">Air Ball</a></li>
-                <li><a href="CoolLookingPlane.HTML" class="fa-beat">Cool looking Plane</a></li>
-                <li><a href="FarFlyingPlane.HTML" class="fa-beat">Far Flying Plane</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="menu">
-        <ul>
-          <li>
-            <a href="#">Help</a>
-            <div class="submenu">
-              <ul>
-                <li><a href="Home.HTML#Buttons">About Us</a></li>
-                <li><a href="Home.HTML#contact">Contact Us</a></li>
-                <li><a href="aboutUS.HTML#about">About Website</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="Shopping">
-        <button class="fa-sharp fa-solid fa-cart-shopping fa-bounce" style="padding:5px; flex: 1; background-color: rgba(0, 0, 0, 0); border: none; margin-right: 10px;"> Cart</button>
-        <button onclick="document.getElementById('id01').style.display='block'; document.getElementById('id02').style.zIndex=-1">Login</button>
-      </div>
-      <!-- The Modal -->
-      <div id="id01" class="modal">
-        <span onclick="document.getElementById('id01').style.display='none'"
-        class="close" title="Close Modal">&times;</span>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-dove"></i>
+                Origami
+            </a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Origami Tutorials</a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-item"><i class="fas fa-frog"></i> Frog</a>
+                        <a href="#" class="dropdown-item"><i class="fas fa-circle"></i> Air Ball</a>
+                        <a href="#" class="dropdown-item"><i class="fas fa-paper-plane"></i> Cool Plane</a>
+                        <a href="#" class="dropdown-item"><i class="fas fa-plane"></i> Flying Plane</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Help</a>
+                    <div class="dropdown">
+                        <a href="#about" class="dropdown-item">About Us</a>
+                        <a href="#contact" class="dropdown-item">Contact</a>
+                        <a href="#" class="dropdown-item">FAQ</a>
+                    </div>
+                </li>
+            </ul>
 
-      <!-- Modal Content -->
-      <form class="modal-content animate" action="/action_page.html">
-        <div class="imgcontainer">
-          <img src="Images/img_avatar2.png" alt="Avatar" class="avatar">
+            <div class="auth-buttons">
+                <button class="btn btn-outline" id="loginBtn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Login
+                </button>
+                <a href="#" class="btn btn-primary">
+                    <i class="fas fa-shopping-cart"></i>
+                    Shop
+                </a>
+                <div class="user-profile" id="userProfile">
+                    <div class="user-avatar" id="userAvatar">U</div>
+                    <span id="userName">User</span>
+                    <button class="logout-btn" id="logoutBtn">Logout</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>A Better Path Folded Out in Front</h1>
+                <p>Discover the ancient art of origami with our step-by-step tutorials, premium paper, and vibrant community. Transform simple sheets into extraordinary creations.</p>
+                <div class="hero-buttons">
+                    <a href="#tutorials" class="btn btn-primary">Start Learning</a>
+                    <a href="#about" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+            <div class="origami-showcase">
+                <div class="origami-card" onclick="window.location.href='#'">
+                    <i class="fas fa-frog"></i>
+                    <h3>Jumping Frog</h3>
+                    <p>Classic and fun!</p>
+                </div>
+                <div class="origami-card" onclick="window.location.href='#'">
+                    <i class="fas fa-paper-plane"></i>
+                    <h3>Paper Airplane</h3>
+                    <p>Soar through the sky</p>
+                </div>
+                <div class="origami-card" onclick="window.location.href='#'">
+                    <i class="fas fa-dove"></i>
+                    <h3>Peace Crane</h3>
+                    <p>Symbol of hope</p>
+                </div>
+                <div class="origami-card" onclick="window.location.href='#'">
+                    <i class="fas fa-star"></i>
+                    <h3>Lucky Star</h3>
+                    <p>Make a wish</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="container">
-          <label for="uname"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="uname" required>
+    <!-- Info Section -->
+    <section class="info-section" id="about">
+        <div class="info-container">
+            <div class="info-content">
+                <h2>How Origami Was Made</h2>
+                <p>Origami is an ancient Japanese art form that involves folding paper into intricate shapes and designs. Believed to have originated in the 17th century, this beautiful craft has evolved from ceremonial uses to a beloved art form practiced worldwide.</p>
+                <p>The word "origami" comes from Japanese "ori" (folding) and "kami" (paper). What started as a formal practice has become a therapeutic and creative outlet that teaches patience, precision, and the beauty of transformation.</p>
+                <a href="#contact" class="btn btn-primary">Get Started Today</a>
+            </div>
+            <div class="info-image">
+                <i class="fas fa-yin-yang"></i>
+            </div>
+        </div>
+    </section>
 
-          <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2>Get In Touch</h2>
+            <p>Have questions about origami? Want to share your creations? We'd love to hear from you!</p>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="contactName" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="contactEmail" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea id="contactMessage" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
 
-          <button type="submit" value="Login" name="">Login</button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
-      </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'; document.getElementById('id02').style.zIndex=1" class="cancelbtn">Cancel</button>
-      <span class="psw"><a href="#">Forgot password?</a></span>
-    </div>
-    </form>
-    </div>
-    </div>
-    <!-- Buttons and middle section -->
-    <div class="MiddleSec" id="buttons">
-      <img src="Images/oragami.jpg">
-      <div class="buttonHolderTypeOne"><button class="buttonStyleOne" onclick="window.location.href='FarFlyingPlane.HTML'">Far Flying Plane</button><button onclick="window.location.href='Frog.HTML'" class="buttonStyleOne">Frog</button></div>
-      <p style="font-family: Roboto Slab;">Diffrent Oragamis</p>
-      <div class="buttonHolderTypeOne" style="margin-right: 20px;"><button onclick="window.location.href='AirBall.HTML'" class="buttonStyleOne">Air Ball</button><button onclick="window.location.href='CoolLookingPlane.HTML'" class="buttonStyleOne">Cool looking Plane</button></div>
-    </div>
-    <!-- Info about origami -->
-    <div class="OrigamiInfo">
-      <p class="header-text" id="id02">How OriGami was made</p>
-      <div class="Holder-Type-One">
-        <p class="Norm-Text">Origami is an ancient Japanese art form that involves folding paper into intricate shapes and designs. Believed to have originated in the 17th century, although the exact origins are unclear. Some historians believe that it may have been inspired by the Chinese art of paper folding. Though others suggest that it may have evolved from traditional Japanese paper-folding techniques. Regardless of its origins, origami has become a beloved art form around the world, with enthusiasts creating everything from simple animals to complex geometric shapes. Origami has been made by humans for centuries originating in Japan, where it was used for ceremonial uses and not for public satisfaction</p>
-        <img src="Images/Spare.png">
-      </div>
-    </div>
-    <div class="error-size-msg">
-      <a class="text-type-1">Error: Expand the window to continue</p>
-    </div>
-    <!-- Contact us -->
-    <div class="Section-contact-us" id="contact" style="z-index: -1;">
-      <div>
-        <input class="Input-Name" type="text" placeholder="Name" name="Name" required>
-        <input class="Input-Email" type="text" placeholder="Email" name="Email">
-        <button class="Input-submit-button" onclick="document.getElementById('Error-101').style.display='block'">Submit</button>
-      </div>
-      <input class="Input-Conserns" type="text" placeholder="Conserns" name="Conserns" required>
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Welcome Back!</h2>
+                <span class="close" id="closeModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form class="login-form" id="loginForm">
+                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <div class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <div class="login-actions">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
-    <div style="display: none;" class="Error-101" id="Error-101">This feature is currently unavaliable, Please try again another time! For now you can email: Life.pigsrule@gmail.com
-      <a href="mailto:life.pigsule@gmail.com">Mail: Life.pigsrule@gmail.com</a><button class="Button-Cancel" onclick="document.getElementById('Error-101').style.display='none'">Cancel</button></div>
+    <!-- Success Message -->
+    <div id="successMessage" class="success-message">
+        <i class="fas fa-check-circle"></i>
+        <span id="successText">Success!</span>
+    </div>
+
     <!-- Footer -->
-    <div class="footer" id="about">
-      <div class="s1">This Website was made by Tilak Rao,<p class="break">This would not have been possible without countless amount of work<p class="break break">Copyright 2023<p class="break">Last updated: 7/5/2023
-      </div>
-      <div class="s2"></div>
-      <div class="s3"></div>
-    </div>
-  </body>
+    <footer class="footer">
+        <p>This Website was made by Tilak Rao</p>
+        <p>This would not have been possible without countless hours of work</p>
+        <p>&copy; 2023 Origami. All rights reserved.</p>
+        <p>Last updated: 7/5/2023</p>
+    </footer>
+
+    <script>
+        // Login functionality
+        const loginBtn = document.getElementById('loginBtn');
+        const loginModal = document.getElementById('loginModal');
+        const closeModal = document.getElementById('closeModal');
+        const loginForm = document.getElementById('loginForm');
+        const userProfile = document.getElementById('userProfile');
+        const userAvatar = document.getElementById('userAvatar');
+        const userName = document.getElementById('userName');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const successMessage = document.getElementById('successMessage');
+        const successText = document.getElementById('successText');
+
+        // Demo users for testing
+        const users = {
+            'admin': { password: 'admin123', name: 'Admin User' },
+            'user': { password: 'user123', name: 'John Doe' },
+            'demo': { password: 'demo', name: 'Demo User' }
+        };
+
+        // Check if user is already logged in
+        const currentUser = sessionStorage.getItem('currentUser');
+        if (currentUser) {
+            const user = JSON.parse(currentUser);
+            showUserProfile(user);
+        }
+
+        // Open login modal
+        loginBtn.addEventListener('click', () => {
+            loginModal.style.display = 'block';
+        });
+
+        // Close login modal
+        closeModal.addEventListener('click', () => {
+            loginModal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+        });
+
+        // Handle login form submission
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
+
+            // Validate credentials
+            if (users[username] && users[username].password === password) {
+                const user = {
+                    username: username,
+                    name: users[username].name
+                };
+
+                // Store user session
+                if (rememberMe) {
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                } else {
+                    sessionStorage.setItem('currentUser', JSON.stringify(user));
+                }
+
+                // Show success message
+                showSuccessMessage('Login successful!');
+                
+                // Close modal and show user profile
+                loginModal.style.display = 'none';
+                showUserProfile(user);
+                
+                // Reset form
+                loginForm.reset();
+            } else {
+                showSuccessMessage('Invalid username or password!', 'error');
+            }
+        });
+
+        // Show user profile
+        function showUserProfile(user) {
+            loginBtn.style.display = 'none';
+            userProfile.style.display = 'flex';
+            userName.textContent = user.name;
+            userAvatar.textContent = user.name.charAt(0).toUpperCase();
+        }
+
+        // Handle logout
+        logoutBtn.addEventListener('click', () => {
+            // Clear user session
+            sessionStorage.removeItem('currentUser');
+            localStorage.removeItem('currentUser');
+            
+            // Show login button and hide user profile
+            userProfile.style.display = 'none';
+            loginBtn.style.display = 'inline-flex';
+            
+            showSuccessMessage('Logged out successfully!');
+        });
+
+        // Show success/error message
+        function showSuccessMessage(message, type = 'success') {
+            successText.textContent = message;
+            successMessage.style.display = 'block';
+            successMessage.style.background = type === 'error' ? '#ef4444' : '#10b981';
+            
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 3000);
+        }
+
+        // Handle contact form
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const message = document.getElementById('contactMessage').value;
+            
+            // Simulate form submission
+            showSuccessMessage(`Thank you ${name}! Your message has been sent.`);
+            contactForm.reset();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.15)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Demo login info
+        console.log('Demo login credentials:');
+        console.log('Username: admin, Password: admin123');
+        console.log('Username: user, Password: user123');
+        console.log('Username: demo, Password: demo');
+    </script>
+</body>
 </html>
